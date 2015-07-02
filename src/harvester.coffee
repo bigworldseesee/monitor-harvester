@@ -1,14 +1,16 @@
+# harvester.coffee
+
 fs = require 'fs'
 events = require 'events'
 mongoose = require 'mongoose'
-
 db = require './db'
-Session = db.Session
 config = require './config'
+
+Session = db.Session
 logPath = config.logPath
 
+# Harvester Class v1.0
 class Harvester extends events.EventEmitter
-
   constructor: ->
     @prevSize = 0
     Session.remove 'version':1, (err) =>
@@ -64,6 +66,5 @@ class Harvester extends events.EventEmitter
           session.save (err) =>
             throw err if err
             @process(idx+1, num_lines)
-
 
 module.exports.Harvester = Harvester
