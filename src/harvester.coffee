@@ -4,7 +4,7 @@ fs = require 'fs'
 events = require 'events'
 mongoose = require 'mongoose'
 db = require './db'
-config = require './config'
+config = require '../config'
 
 Session = db.Session
 logPath = config.logPath

@@ -2,7 +2,7 @@
 mongoose = require 'mongoose'
 harvester = require './harvester'
 watcher = require './watcher'
-config = require './config'
+config = require '../config'
 
 logPath = config.logPath
 dbUrl = config.harvesterUrl
